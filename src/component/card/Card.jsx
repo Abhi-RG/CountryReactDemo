@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import './Card.css';
+import { useEffect, useState } from "react";
+import "./Card.css";
 const Card = ({ searchQuery }) => {
   const [country, setCountryData] = useState([]);
 
@@ -9,7 +9,7 @@ const Card = ({ searchQuery }) => {
 
   const onInIt = () => {
     if (searchQuery.length) {
-      fetch('https://restcountries.com/v3.1/name/' + searchQuery)
+      fetch("https://restcountries.com/v3.1/name/" + searchQuery)
         .then((response) => {
           return response.json();
         })
@@ -23,27 +23,36 @@ const Card = ({ searchQuery }) => {
     }
   };
 
-  console.log(country, 'country');
   return (
     <div className="card-container">
       {country?.map((country, index) => (
-        <div className='card' key={index}>
-          <img
-            className="card-image"
-            src={country.flags.png}
-            alt="Flag"
-            style={{ width: '100px', height: 'auto' }}
-          />
-          <p className="card-title">Country Name: {country.name.common}</p>
-          <p className="card-title">Capital: {country.capital}</p>
-          <p className="card-text">Area: {country.area} square kilometers</p>
-          <p className="card-text">Population: {country.population}</p>
-          {/* <p className="card-text">
-            Currency: {Object.keys(country.currencies).join(', ')}
-          </p> */}
-          {/* <p className="card-text">
-            Language: {Object.values(country.languages).join(', ')}
-          </p>  */}
+        <div className="card" key={index}>
+          <div className="card-image-container">
+            <img
+              className="card-image"
+              src={country.flags.png}
+              alt="Flag"
+              style={{ width: "100px", height: "auto" }}
+            />
+          </div>
+          <div className="card-content">
+            <p className="card-title">Country Name: {country.name.common}</p>
+            <p className="card-title">Capital: {country.capital}</p>
+            <p className="card-text">Area: {country.area} square kilometers</p>
+            <p className="card-text">Population: {country.population}</p>
+            <p className="card-text">
+              Currency:{" "}
+              {country?.currencies
+                ? Object.keys(country?.currencies)?.join(", ")
+                : "NA"}
+            </p>
+            <p className="card-text">
+              Language:{" "}
+              {country?.languages
+                ? Object.values(country?.languages)?.join(", ")
+                : "NA"}
+            </p>
+          </div>
         </div>
       ))}
     </div>

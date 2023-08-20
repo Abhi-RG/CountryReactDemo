@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './Search.css';
 const Search = ({ searchQuery, setSearchQuery }) => {
   const handleInput = (e) => {
