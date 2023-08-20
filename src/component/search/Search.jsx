@@ -6,7 +6,7 @@ const Search = ({ searchQuery, setSearchQuery }) => {
   };
 
   return (
-    <div className="search-container">
+    <div className="search-bar">
       <input
         type="text"
         name="search"

@@ -1,5 +1,14 @@
-.search-container {
+
+.search-bar {
+  margin-bottom: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

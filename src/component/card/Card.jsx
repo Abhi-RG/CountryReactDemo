@@ -27,7 +27,7 @@ const Card = ({ searchQuery }) => {
   return (
     <div className="card-container">
       {country?.map((country, index) => (
-        <div className="card" key={index}>
+        <div className='card' key={index}>
           <img
             className="card-image"
             src={country.flags.png}
