@@ -3,7 +3,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div className="footer">
-      <p>Developed by Abhishek R G</p>
+      &copy; {new Date().getFullYear()} Developed by Abhishek{" "}
     </div>
   );
 }
