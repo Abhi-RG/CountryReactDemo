@@ -27,7 +27,6 @@ const Card = ({ searchQuery }) => {
         "https://restcountries.com/v3.1/name/" + searchQuery
       );
       const response = await fetchData.json();
-      console.log(response, "🎈");
       setCountryData(response);
     }
   };
